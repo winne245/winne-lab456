@@ -16,6 +16,7 @@ namespace nguyenchienthang_lab456.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+
         public ManageController()
         {
         }
