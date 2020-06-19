@@ -9,6 +9,8 @@ namespace nguyenchienthang_lab456.ViewModels
 {
     public class CourseViewModel
     {
+        internal bool ShowAction;
+
         [Required]
         public string Place { get; set; }
         [Required]
@@ -20,6 +22,7 @@ namespace nguyenchienthang_lab456.ViewModels
         [Required]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public object UpcomingCourses { get; internal set; }
 
         public DateTime GetDateTime()
         {
