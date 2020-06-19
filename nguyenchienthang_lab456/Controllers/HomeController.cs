@@ -11,7 +11,7 @@ namespace nguyenchienthang_lab456.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
@@ -21,7 +21,7 @@ namespace nguyenchienthang_lab456.Controllers
             var upcommingCourses = _dbContext.Courses
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
-                .Where(c => c.DateTime > DateTime.Now);
+                .Where(c => c.DateTime > DateTime.Now && c.IsCanceled == false);
             var viewModel = new CoursesViewModel
             {
                 UpcommingCourses = upcommingCourses,
